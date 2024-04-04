@@ -19,46 +19,54 @@ function fetchResults(event)
     }).then(json => displayResults(json))
 };
 
-function displayResults(json) {
-    // STEP 5: Log to the console the results from the API
+function displayResults(json)
+{
     console.log(json);
-    /*
-    // Clear out the old results…
-    while (section.firstChild) {
+    while (section.firstChild) 
+    {
         section.removeChild(section.firstChild);
     };
-    // STEP 6: Create the variable articles to capture the articles from the JSON object
-    let articles = json.response.docs;
-
-    if (articles.length === 0) {
+    let details = json.Search;
+    console.log(details);
+    if (details.length === 0)
+    {
         const para = document.createElement('p');
         para.textContent = 'No results returned.'
         section.appendChild(para);
-    } else {
-        for (let i = 0; i < articles.length; i++) {
+    } 
+    else 
+    {
+        for (let i = 0; i < details.length; i++) 
+        {
             const article = document.createElement('article');
-            const heading = document.createElement('h2');
-            const link = document.createElement('a');
-            const img = document.createElement('img');
+            const heading = document.createElement('h1');
             const para1 = document.createElement('p');
+            const para2 = document.createElement('p');
+            const para3 = document.createElement('p');
+            const img = document.createElement('img');
+            const movietrailer = document.createElement('a');
+            const br = document.createElement('br');
+            
+            heading.textContent = 'Movie name:'+ details[i].Title;
+            para1.textContent = 'Year: ' + details[i].Year;
+            para2.textContent = 'Type: ' + details[i].Type;
+            para3.textContent = 'IMDB ID: ' + details[i].imdbID;
+            img.src = details[i].Poster;
+            movietrailer.textContent = 'Click here to watch movie trailer';
+            movietrailer.href = `https://www.youtube.com/results?search_query=${details[i].Title}+trailer`;
+            movietrailer.target = '_blank'; // Open the link in a new tab
 
-            const current = articles[i];
-            console.log(current);
-            // STEP 7: Look at the console output from the API…
-            link.href = current.web_url;
-            link.textContent = current.headline.main;
-            para1.textContent = current.snippet;
 
-            if (current.multimedia.length > 0) {
-                img.src = 'https://www.nytimes.com/' + current.multimedia[0].url;
-                img.alt = current.headline.main;
-            };
-            // STEP 8: Put each article together as an ARTICLE element and append it as a child of the SECTION element in the HTML
             article.appendChild(heading);
-            heading.appendChild(link);
             article.appendChild(img);
             article.appendChild(para1);
+            article.appendChild(para2);
+            article.appendChild(para3);
+            article.appendChild(movietrailer);
+            article.appendChild(br);
             section.appendChild(article);
+            
         };
-    };*/
+    };
+
 };
