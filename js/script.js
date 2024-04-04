@@ -1,4 +1,4 @@
-const baseURL = 'https://www.omdbapi.com/';
+const baseURL = 'http://www.omdbapi.com/';
 const key = '43ce8922';
 
 let url;
