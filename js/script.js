@@ -3,6 +3,12 @@ const key = '43ce8922';
 
 let url;
 
+var stdInfo = document.getElementById("stdInfo");
+var studentName = "Vraj Patel";
+var studentID = "200554104";
+stdname.textContent = "Name: " + studentName;
+stdid.textContent ="Student ID: " + studentID;
+ 
 const searchTerm = document.querySelector('.search');
 const submitBtn = document.querySelector('.submit');
 const section = document.querySelector('section');

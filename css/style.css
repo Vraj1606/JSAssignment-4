@@ -6,6 +6,11 @@ h1
     color: #007bff; 
 }
 
+.stdinfo 
+{
+    text-align : center;
+}
+
 form 
 {
     text-align: center;
@@ -48,14 +53,11 @@ section
 
 article 
 {
-    width: 300px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s; 
 }
+
 img 
 {
     display: block;
